@@ -1,0 +1,2 @@
+import { navLinks,profile } from '../data/profile'
+export default function Footer(){return <footer><div className="container footer-grid"><div><a className="logo" href="#home"><span>JS</span>JAGDISH SUTHAR</a><p>Full Stack Developer</p></div><nav>{navLinks.filter(x=>x!=='Experience').map(x=><a key={x} href={`#${x.toLowerCase()}`}>{x}</a>)}</nav></div><div className="container copyright"><span>© 2026 Jagdish Suthar. All Rights Reserved.</span><span>Designed & Developed by Jagdish Suthar</span></div></footer>}
