@@ -22,3 +22,24 @@ body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;bac
 .tech-strip,footer{opacity:0;transform:translateY(20px);transition:.7s ease}.tech-strip.visible,footer.visible{opacity:1;transform:none}.tech-strip span{transition:.25s}.tech-strip span:hover{color:var(--primary);border-color:var(--primary);transform:translateY(-4px)}
 @keyframes ambient{to{transform:scale(1.12) translate3d(2%,-1%,0)}}@keyframes visualFloat{50%{transform:translateY(-10px)}}@keyframes badgeFloat{50%{transform:translateY(-8px) rotate(2deg)}}@keyframes orbMove{to{transform:translate(35px,25px) scale(1.13)}}@keyframes pulseGlow{50%{box-shadow:0 0 0 9px color-mix(in srgb,var(--accent) 4%,transparent)}}@keyframes markerGlow{50%{box-shadow:0 0 35px color-mix(in srgb,var(--primary) 28%,transparent)}}
 @media(prefers-reduced-motion:reduce){body:before{display:none}.section,.section-title>*,.skill-card,.project-card,.services-grid article,.highlights>div,.task-grid>span,.tech-strip,footer{opacity:1!important;transform:none!important}.track i{width:var(--level)!important}}
+
+/* Resume-style experience entries */
+.resume-experience{border-top:1px solid var(--line)}
+.resume-role{padding:27px 0 30px;border-bottom:1px solid var(--line)}
+.resume-role header{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:17px}
+.resume-role h3{font-size:17px;margin:0;color:var(--text)}
+.resume-role header span{color:var(--accent);font-size:13px;font-weight:700;text-align:right;white-space:nowrap}
+.resume-project{margin:0 0 17px;padding-left:18px;border-left:2px solid color-mix(in srgb,var(--primary) 45%,transparent)}
+.resume-project:last-child{margin-bottom:0}
+.resume-project h4{font-family:'Manrope',sans-serif;font-size:14px;margin:0 0 6px;color:var(--text)}
+.resume-project h4 a{color:var(--primary);font-size:12px;font-weight:600}
+.resume-project ul{margin:0;padding-left:18px;color:var(--muted)}
+.resume-project li{padding:2px 0;font-size:13px;line-height:1.55}
+@media(max-width:780px){.resume-role header{align-items:flex-start;flex-direction:column;gap:7px}.resume-role header span{text-align:left;white-space:normal}.resume-project{padding-left:14px}}
+
+.project-home-image{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;background:#f4f4f4}
+.project-art:has(.project-home-image){background:#f4f4f4}
+.profile-photo-frame{width:min(100%,460px);aspect-ratio:4/5;margin:auto;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:var(--card);box-shadow:var(--shadow);transform:rotate(2deg)}
+.profile-photo-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+.dev-visual .badge-laravel,.dev-visual .badge-react{z-index:2}
+@media(max-width:780px){.profile-photo-frame{width:min(94%,420px);border-radius:22px}}
