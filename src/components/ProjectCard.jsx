@@ -1,9 +1,12 @@
 import { FiArrowUpRight, FiGithub, FiCheck } from 'react-icons/fi'
+import { useState } from 'react'
 
 export default function ProjectCard({ project, index }) {
+  const [imageFailed, setImageFailed] = useState(false)
+
   return <article className="project-card">
     <div className={`project-art ${project.theme}`}>
-      {project.imageUrl ? <img className="project-home-image" src={project.imageUrl} alt={`${project.title} homepage preview`} /> : <div className="browser">
+      {project.imageUrl && !imageFailed ? <img className="project-home-image" src={project.imageUrl} alt={`${project.title} website design preview`} onError={() => setImageFailed(true)} /> : <div className="browser">
         <div className="browser-top"><i /><i /><i /></div>
         {project.theme === 'news' ? <><div className="news-head">SPEED<span>24</span>NEWS</div><div className="news-layout"><b /><i /><i /><i /></div></> : <><div className="shop-head">Kunj<span>Creation</span></div><div className="products"><i /><i /><i /></div></>}
       </div>}
