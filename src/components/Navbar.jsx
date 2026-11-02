@@ -1,2 +1,24 @@
-import { useState } from 'react'; import { FiMenu, FiX, FiDownload } from 'react-icons/fi'; import { navLinks, profile } from '../data/profile'; import ThemeToggle from './ThemeToggle'
-export default function Navbar({theme,setTheme}) { const [open,setOpen]=useState(false); return <header className="navbar"><div className="container nav-inner"><a className="logo" href="#home" onClick={()=>setOpen(false)}><span>JS</span>JAGDISH SUTHAR</a><nav className={open?'nav-links open':'nav-links'} aria-label="Main navigation">{navLinks.map(x=><a key={x} href={`#${x.toLowerCase()}`} onClick={()=>setOpen(false)}>{x}</a>)}<div className="mobile-actions"><a className="btn small" href="#contact">Hire Me</a></div></nav><div className="nav-actions"><ThemeToggle theme={theme} setTheme={setTheme}/><a className="btn ghost small resume" href={profile.resume} download><FiDownload/> Resume</a><a className="btn small" href="#contact">Hire Me</a><button className="menu-btn" onClick={()=>setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>{open?<FiX/>:<FiMenu/>}</button></div></div></header> }
+import { useState } from 'react'
+import { FiArrowUpRight, FiDownload, FiMenu, FiX } from 'react-icons/fi'
+import { navLinks, profile } from '../data/profile'
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false)
+
+  return <header className="navbar">
+    <div className="container nav-inner">
+      <a className="logo" href="#home" onClick={() => setOpen(false)} aria-label="Jagdish Suthar, home">
+        <span>JS</span><span className="logo-name">JAGDISH SUTHAR<small>FULL STACK DEVELOPER</small></span>
+      </a>
+      <nav className={open ? 'nav-links open' : 'nav-links'} aria-label="Main navigation">
+        {navLinks.map(item => <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setOpen(false)}>{item}</a>)}
+        <div className="mobile-actions"><a className="btn small" href="#contact" onClick={() => setOpen(false)}>Let's talk <FiArrowUpRight /></a></div>
+      </nav>
+      <div className="nav-actions">
+        <a className="resume-link" href={profile.resume} download><FiDownload /> Resume</a>
+        <a className="btn small nav-cta" href="#contact">Let's talk <FiArrowUpRight /></a>
+        <button className="menu-btn" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open}>{open ? <FiX /> : <FiMenu />}</button>
+      </div>
+    </div>
+  </header>
+}

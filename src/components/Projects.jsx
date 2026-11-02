@@ -1,2 +1,12 @@
-import SectionTitle from './SectionTitle'; import ProjectCard from './ProjectCard'; import { projects } from '../data/projects'
-export default function Projects(){return <section id="projects" className="section surface"><div className="container"><SectionTitle tag="Featured work" title="Products built to solve real problems." copy="Selected work spanning eCommerce, content publishing and business operations."/><div className="projects-grid">{projects.map((p,i)=><ProjectCard project={p} index={i} key={p.title}/>)}</div></div></section>}
+import SectionTitle from './SectionTitle'
+import ProjectCard from './ProjectCard'
+import { projects } from '../data/projects'
+
+export default function Projects() {
+  return <section id="projects" className="section projects-section">
+    <div className="container">
+      <SectionTitle number="03" tag="Selected work" title="A few things I've brought to life." copy="Real products, made for real people and the problems they need to solve." />
+      <div className="projects-list">{projects.map((project, index) => <ProjectCard project={project} index={index} key={project.title} />)}</div>
+    </div>
+  </section>
+}

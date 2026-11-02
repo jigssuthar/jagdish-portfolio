@@ -1,3 +1,4 @@
+import { FiArrowUpRight } from 'react-icons/fi'
 import SectionTitle from './SectionTitle'
 
 const roles = [
@@ -47,5 +48,21 @@ const roles = [
 ]
 
 export default function Experience() {
-	return <section id="experience" className="section"><div className="container"><SectionTitle tag="Experience" title="Four years of building for the web."/><div className="resume-experience">{roles.map(role => <article className="resume-role" key={role.title}><header><h3>{role.title}</h3><span>{role.date}</span></header>{role.projects.map(project => <div className="resume-project" key={project.name}><h4>{project.link ? <a href={`https://${project.link}`} target="_blank" rel="noreferrer">{project.name}</a> : project.name}</h4><ul>{project.details.map(detail => <li key={detail}>{detail}</li>)}</ul></div>)}</article>)}</div></div></section>
+  return <section id="experience" className="section experience-section">
+    <div className="container">
+      <SectionTitle number="02" tag="Where I've been" title="Experience earned in the real world." copy="A few chapters from the work so far." />
+      <div className="resume-experience">{roles.map((role, index) =>
+        <article className="resume-role" key={role.title}>
+          <span className="experience-index">0{index + 1}</span>
+          <div className="experience-role-title"><h3>{role.title}</h3><span>{role.date}</span></div>
+          <div className="experience-projects">{role.projects.map(project =>
+            <div className="resume-project" key={project.name}>
+              <h4>{project.link ? <a href={`https://${project.link}`} target="_blank" rel="noreferrer">{project.name}<FiArrowUpRight /></a> : project.name}</h4>
+              <ul>{project.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
+            </div>
+          )}</div>
+        </article>
+      )}</div>
+    </div>
+  </section>
 }

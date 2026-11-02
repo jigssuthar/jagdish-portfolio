@@ -1,3 +1,33 @@
-import SectionTitle from './SectionTitle'; import { FiCode,FiServer,FiShoppingBag,FiGrid,FiTool,FiZap,FiSmartphone,FiDatabase } from 'react-icons/fi'
-const services=[[FiCode,'Laravel Development','Secure, maintainable Laravel applications engineered around your business.'],[FiServer,'Full Stack Development','Complete web products from database to responsive user interface.'],[FiDatabase,'REST API Development','Well-documented APIs for web, mobile and third-party integrations.'],[FiShoppingBag,'eCommerce Development','Conversion-friendly storefronts and powerful order management.'],[FiGrid,'Admin Dashboards','Clear, efficient dashboards that simplify daily operations.'],[FiTool,'Website Maintenance','Reliable updates, monitoring and post-deployment support.'],[FiZap,'Bug Fixing & Optimization','Diagnosis, performance tuning and stability improvements.'],[FiSmartphone,'Responsive Websites','Pixel-consistent experiences across every screen size.']]
-export default function Services(){return <section id="services" className="section"><div className="container"><SectionTitle tag="Services" title="Development support from idea to scale."/><div className="services-grid">{services.map(([Icon,t,d],i)=><article key={t}><span className="service-index">0{i+1}</span><Icon/><h3>{t}</h3><p>{d}</p></article>)}</div><div className="why"><div><span>Why work with me</span><h2>Thoughtful development.<br/>Dependable delivery.</h2></div><div className="why-grid">{['4+ Years Experience','Clean Code','Scalable Architecture','Responsive Design','Secure Applications','API Integration','Fast Delivery','Post-Deployment Support'].map(x=><span key={x}>✓ {x}</span>)}</div></div></div></section>}
+import SectionTitle from './SectionTitle'
+import { FiArrowUpRight, FiCode, FiDatabase, FiGrid, FiServer, FiShoppingBag, FiSmartphone, FiTool, FiZap } from 'react-icons/fi'
+
+const services = [
+  [FiCode, 'Laravel engineering', 'Secure, maintainable applications shaped around the way your business works.'],
+  [FiServer, 'Full stack development', 'Complete web products, from thoughtful data models to polished interfaces.'],
+  [FiDatabase, 'API development', 'Reliable APIs for web, mobile and third-party integrations.'],
+  [FiShoppingBag, 'eCommerce platforms', 'Flexible storefronts and the tools behind smooth order management.'],
+  [FiGrid, 'Admin dashboards', 'Clear, practical dashboards that make everyday operations easier.'],
+  [FiTool, 'Ongoing support', 'Dependable maintenance, debugging and post-launch improvements.'],
+  [FiZap, 'Performance tuning', 'Find bottlenecks, improve response times and make applications more resilient.'],
+  [FiSmartphone, 'Responsive interfaces', 'Consistent experiences across desktops, tablets and phones.']
+]
+
+const strengths = ['4+ years in production', 'Practical communication', 'Built for future growth', 'Support beyond launch']
+
+export default function Services() {
+  return <section id="services" className="section services-section">
+    <div className="container">
+      <SectionTitle number="04" tag="What I can do" title="Good work, without the noise." copy="Bring me a challenge. We can work out the right way to build it." />
+      <div className="services-layout">
+        <div className="services-intro">
+          <span className="services-mark">↘</span>
+          <p>From first sketch to production-ready software, I help teams move forward with confidence.</p>
+          <div className="strength-list">{strengths.map(strength => <span key={strength}><i />{strength}</span>)}</div>
+        </div>
+        <div className="services-list">{services.map(([Icon, title, description], index) =>
+          <article className="service-row" key={title}><span className="service-index">0{index + 1}</span><Icon /><div><h3>{title}</h3><p>{description}</p></div><FiArrowUpRight className="service-arrow" /></article>
+        )}</div>
+      </div>
+    </div>
+  </section>
+}

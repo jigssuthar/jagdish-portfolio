@@ -6,4 +6,4 @@ export const profile = {
   socials: { linkedin: '', github: '', instagram: '' },
   about: [`I'm Jagdish Suthar, a Full Stack Developer with 4+ years of experience building dynamic web applications, admin dashboards, REST APIs, eCommerce platforms and content management systems.`, `I specialize in Laravel and PHP backend development and also work with React, JavaScript, MySQL and modern frontend technologies.`, `I focus on writing clean, maintainable and scalable code while creating responsive and user-friendly applications.`]
 }
-export const navLinks = ['Home','About','Experience','Projects','Services','Contact']
+export const navLinks = ['Home','About','Experience','Projects','Services','Skills','Contact']
